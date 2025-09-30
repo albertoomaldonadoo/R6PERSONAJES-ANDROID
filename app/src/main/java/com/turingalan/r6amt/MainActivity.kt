@@ -11,19 +11,18 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.turingalan.lazyapp.ui.R6ListaPersonajes
 import com.turingalan.r6amt.ui.theme.R6AMTTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        enableEdgeToEdge() // quita los bordes y usa toda la pantalla
         setContent {
             R6AMTTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    // Aquí muestro la lista de personajes y le paso el padding
+                    R6ListaPersonajes(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -31,17 +30,17 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Saludo(nombre: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = "Hola $nombre!",
         modifier = modifier
     )
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun SaludoPreview() {
     R6AMTTheme {
-        Greeting("Android")
+        Saludo("Android")
     }
 }
