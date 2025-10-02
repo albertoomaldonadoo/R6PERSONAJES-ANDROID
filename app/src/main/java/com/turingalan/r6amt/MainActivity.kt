@@ -6,8 +6,12 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -15,32 +19,28 @@ import com.turingalan.lazyapp.ui.R6ListaPersonajes
 import com.turingalan.r6amt.ui.theme.R6AMTTheme
 
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge() // quita los bordes y usa toda la pantalla
+        enableEdgeToEdge()
         setContent {
             R6AMTTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    // Aquí muestro la lista de personajes y le paso el padding
+                Scaffold(modifier = Modifier.fillMaxSize(),
+                    topBar = {
+                        TopAppBar(
+                            colors = topAppBarColors(
+                                containerColor = MaterialTheme.colorScheme.primaryContainer,
+                                titleContentColor = MaterialTheme.colorScheme.primary,
+                            ),
+                            title = {
+                                Text("Personajes de Tom Clancy's Rainbow Six: Siege")
+                            }
+                        )
+                    }) { innerPadding ->
                     R6ListaPersonajes(modifier = Modifier.padding(innerPadding))
+
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Saludo(nombre: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hola $nombre!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun SaludoPreview() {
-    R6AMTTheme {
-        Saludo("Android")
     }
 }
