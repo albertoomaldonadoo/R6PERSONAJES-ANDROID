@@ -34,7 +34,6 @@ class MainActivity : ComponentActivity() {
                             }
                         )
                     }
-
                 ) { innerPadding ->
                     Column {
                         R6ListaPersonajes(modifier = Modifier.padding(innerPadding))
