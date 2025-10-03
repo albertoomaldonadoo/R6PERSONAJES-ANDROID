@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -28,18 +29,20 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize(),
                     topBar = {
                         TopAppBar(
-                            colors = topAppBarColors(
-                                containerColor = MaterialTheme.colorScheme.primaryContainer,
-                                titleContentColor = MaterialTheme.colorScheme.primary,
-                            ),
                             title = {
                                 Text("Personajes de Tom Clancy's Rainbow Six: Siege")
                             }
                         )
-                    }) { innerPadding ->
-                    R6ListaPersonajes(modifier = Modifier.padding(innerPadding))
+                    }
+
+                ) { innerPadding ->
+                    Column {
+                        R6ListaPersonajes(modifier = Modifier.padding(innerPadding))
+                        Text("Trabajo hecho por Alberto Maldonado Triana 2ºDAM")
+                    }
 
                 }
+
             }
         }
     }

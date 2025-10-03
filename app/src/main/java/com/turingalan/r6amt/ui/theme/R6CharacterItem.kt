@@ -41,6 +41,7 @@ fun R6PersonajeItem(personaje: Personaje) {
             Text(text = personaje.descripcion)
         }
     }
+
 }
 
 @Composable
@@ -57,6 +58,7 @@ fun R6ListaPersonajes(modifier: Modifier = Modifier) {
             )
         }
     }
+
 }
 
 @Composable

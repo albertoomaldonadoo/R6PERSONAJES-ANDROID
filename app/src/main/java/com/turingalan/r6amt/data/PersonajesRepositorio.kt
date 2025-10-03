@@ -1,6 +1,9 @@
 package com.turingalan.r6amt.data
 
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import com.turingalan.r6amt.R
+import org.w3c.dom.Text
 
 object PersonajesRepositorio {
     fun cogerPersonajes(): List<Personaje>{
@@ -40,7 +43,58 @@ object PersonajesRepositorio {
                 "Personaje de ataque 11"),
             Personaje(R.drawable.blackbeard,
                 "Blackbeard",
-                "Personaje de ataque 12"),
+                "Personaje de ataque 12"),Personaje(R.drawable.capitao,
+                "Capitão",
+                "Personaje de ataque 13"),
+            Personaje(R.drawable.hibana,
+                "Hibana",
+                "Personaje de ataque 14"),
+            Personaje(R.drawable.jackal,
+                "Jackal",
+                "Personaje de ataque 15"),
+            Personaje(R.drawable.zofia,
+                "Zofia",
+                "Personaje de ataque 16"),
+            Personaje(R.drawable.dokkaebi,
+                "Dokkaebi",
+                "Personaje de ataque 17"),
+            Personaje(R.drawable.rook,
+                "Rook",
+                "Personaje de defensa 1"),
+            Personaje(R.drawable.doc,
+                "Doc",
+                "Personaje de defensa 2"),
+            Personaje(R.drawable.kapkan,
+                "Kapkan",
+                "Personaje de defensa 3"),
+            Personaje(R.drawable.bandit,
+                "Bandit",
+                "Personaje de defensa 4"),
+            Personaje(R.drawable.jaeger,
+                "Jäger",
+                "Personaje de defensa 5"),
+            Personaje(R.drawable.pulse,
+                "Pulse",
+                "Personaje de defensa 6"),
+            Personaje(R.drawable.castle,
+                "Castle",
+                "Personaje de defensa 7"),
+            Personaje(R.drawable.mute,
+                "Mute",
+                "Personaje de defensa 8"),
+            Personaje(R.drawable.smoke,
+                "Smoke",
+                "Personaje de defensa 9"),
+            Personaje(R.drawable.valkyrie,
+                "Valkyrie",
+                "Personaje de defensa 10"),
+            Personaje(R.drawable.echo,
+                "Echo",
+                "Personaje de defensa 11"),
+            Personaje(R.drawable.maestro,
+                "Maestro",
+                "Personaje de defensa 12")
         )
     }
+
 }
